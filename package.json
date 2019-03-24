@@ -1,0 +1,45 @@
+{
+  "name": "windmeter",
+  "version": "1.0.0",
+  "main": "target/index.js",
+  "license": "MIT",
+  "author": "Peter van Dijk",
+  "private": true,
+  "engines": {
+    "node" : "10.15.3",
+    "yarn": "1.15.2",
+    "npm": "6.4.1"
+  },
+  "scripts": {
+    "start": "nodemon",
+    "test": "node_modules/.bin/mocha --require ts-node/register src/**/*.spec.ts",
+    "watch": "node_modules/.bin/tsc -w",
+    "compile": "node_modules/.bin/tsc -p .",
+    "build": "node_modules/.bin/tsc -p ."
+  },
+  "dependencies": {
+    "@types/bcrypt": "^3.0.0",
+    "@types/jsonwebtoken": "^7.2.8",
+    "@types/koa": "^2.0.46",
+    "@types/koa-bodyparser": "^5.0.1",
+    "@types/koa-multer": "^1.0.0",
+    "@types/koa-router": "^7.0.32",
+    "@types/socket.io": "^1.4.38",
+    "bcrypt": "^3.0.2",
+    "dotenv": "^6.1.0",
+    "jsonwebtoken": "^8.3.0",
+    "kcors": "^2.2.2",
+    "koa": "^2.6.1",
+    "koa-bodyparser": "^4.2.1",
+    "koa-multer": "^1.0.2",
+    "koa-router": "^7.4.0",
+    "nodemon": "^1.18.4",
+    "pg": "^7.5.0",
+    "routing-controllers": "^0.7.7",
+    "socket.io": "^2.1.1",
+    "socketio-jwt-auth": "^0.0.6",
+    "ts-node": "^7.0.1",
+    "typeorm": "^0.2.8",
+    "typescript": "^3.1.3"
+  }
+}
