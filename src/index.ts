@@ -37,7 +37,7 @@ useKoaServer(app, {
     }
     const header: string = action.request.headers.authorization
     const body: ParticleObject = action.request.body
-    console.log('**************request body', body)
+    console.log('************** request body', body)
 
     if (header && header.startsWith('Bearer ')) {
       const [ , token ] = header.split(' ')
