@@ -36,7 +36,6 @@ export default class WindspeedController {
     }
   }
 
-  // @Authorized()
   @Get('/windspeeds/:deviceId([0-9]+)')
   async getSpeeds(
     @Param('deviceId') deviceId: number,
@@ -49,6 +48,19 @@ export default class WindspeedController {
     
 
     return {windspeeds}
+  }
+
+  @Get('/windspeeds/:deviceId/latest')
+  async getLatestSpeed(
+    @Param('deviceId') deviceId: number,
+  ) {
+    const device = await Device.findOne(deviceId)
+    if (!device) throw new NotFoundError('Device not found')
+    console.log(device)
+    const windspeed = await Windspeed.find({where: {device}, order: { published: 'DESC' }, skip: 0, take: 1 })
+    
+
+    return {windspeed}
   }
 
 }
